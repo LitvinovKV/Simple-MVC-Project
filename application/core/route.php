@@ -1,6 +1,6 @@
 <?php
     class Route {
-        public static function start() {
+        static function start() {
             // Контроллер и действия по умолчанию
             $controllerName = "Main";
             $actionName = "index";
@@ -18,8 +18,8 @@
 
             // Добавить префиксы
             $model_name = "model_" . $controllerName;
-            $controller_name = "controller_" . $controller_name;
-            $action_name = "action_" . $action_name;
+            $controller_name = "controller_" . $controllerName;
+            $action_name = "action_" . $actionName;
 
             // подключить файл с классом модели 
             // (такого файла модели может и не быть)
@@ -55,7 +55,7 @@
         }
 
         // Отправка HTTP-запроса 404
-        public static function ErrorPage404() {
+        static function ErrorPage404() {
             $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
             header('HTTP/1.1 404 Not Found');
 		    header("Status: 404 Not Found");
